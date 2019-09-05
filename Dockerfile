@@ -137,7 +137,6 @@ RUN apk add --no-cache --update \
       libxml2 \
       musl-dev \
       gcc \
-      lxml \
       libxslt-dev \
       libxml2-dev \
       zlib \
