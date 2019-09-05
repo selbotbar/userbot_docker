@@ -147,4 +147,12 @@ RUN apk add --no-cache --update \
 
 RUN pip install -r https://raw.githubusercontent.com/RaphielGang/Telegram-UserBot/staging/requirements.txt
 
+RUN mkdir /app
+
+# The sandbox which can be used for the userbot
+# Clone your stuff here
+# Pip deps are updooted already
+
+RUN chmod 777 /app
+
 CMD ["python3"]
