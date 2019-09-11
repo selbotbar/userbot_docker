@@ -143,7 +143,9 @@ RUN apk add --no-cache --update \
       zlib-dev \
       libjpeg \
       libjpeg-turbo-dev \
-      linux-headers
+      linux-headers \
+      jq \
+      pv
 
 RUN pip install -r https://raw.githubusercontent.com/RaphielGang/Telegram-UserBot/staging/requirements.txt
 
