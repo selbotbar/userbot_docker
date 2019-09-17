@@ -135,6 +135,9 @@ RUN apk add --no-cache --update \
       neofetch \
       musl \
       libxml2 \
+      libwebp-dev \
+      libffi-dev \
+      openssl-dev \
       musl-dev \
       gcc \
       libxslt-dev \
