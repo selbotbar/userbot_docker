@@ -3,7 +3,7 @@
 exit_script()
 {
 echo "Build was killed!"
-sendTG "${ROM} Build for ${DEVICE} was killed!"
+sendTG "Docker image build was killed!"
 }
 
 trap exit_script SIGINT SIGTERM
@@ -14,9 +14,9 @@ function sendTG() {
 
 sendTG "\`Docker image is being updated!\`"
 
-docker build . -t baalajimaestro/userbot_python:latest
-docker tag baalajimaestro/userbot_python:latest baalajimaestro/userbot_python:latest
+docker build . -t zakaryan2004/userbot_docker:latest
+docker tag zakaryan2004/userbot_docker:latest zakaryan2004/userbot_docker:latest
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-docker push baalajimaestro/userbot_python
+docker push zakaryan2004/userbot_docker
 
-sendTG "@baalajimaestro \`I have pushed new images to docker\` %0A [Images are Here](https://hub.docker.com/r/baalajimaestro/userbot_python)"
+sendTG "\`I have pushed new images to docker\` %0A [Images are Here](https://hub.docker.com/r/zakaryan2004/userbot_docker)"

@@ -150,7 +150,7 @@ RUN apk add --no-cache --update \
       jq \
       pv
 
-RUN pip install -r https://raw.githubusercontent.com/RaphielGang/Telegram-UserBot/staging/requirements.txt
+RUN pip install -r https://raw.githubusercontent.com/RaphielGang/Telegram-Paperplane/staging/requirements.txt
 
 RUN mkdir /app
 
