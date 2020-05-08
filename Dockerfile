@@ -12,7 +12,7 @@ ENV LANG C.UTF-8
 RUN apk add --no-cache ca-certificates
 
 ENV GPG_KEY E3FF2839C048B25C084DEBE9B26995E310250568
-ENV PYTHON_VERSION 3.8.0b4
+ENV PYTHON_VERSION 3.8.2
 
 RUN set -ex \
 	&& apk add --no-cache --virtual .fetch-deps \
@@ -150,14 +150,12 @@ RUN apk add --no-cache --update \
       jq \
       pv
 
-RUN pip install -r https://raw.githubusercontent.com/RaphielGang/Telegram-Paperplane/staging/requirements.txt
-
-RUN mkdir /app
+ADD https://raw.githubusercontent.com/RaphielGang/Telegram-Paperplane/staging/requirements.txt requirements.txt
+RUN pip install -r requirements.txt
 
 # The sandbox which can be used for the userbot
 # Clone your stuff here
 # Pip deps are updooted already
-
-RUN chmod 777 /app
+RUN mkdir /app && chmod 777 /app
 
 CMD ["python3"]

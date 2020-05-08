@@ -15,7 +15,6 @@ function sendTG() {
 sendTG "\`Docker image is being updated!\`"
 
 docker build . -t zakaryan2004/userbot_docker:latest
-docker tag zakaryan2004/userbot_docker:latest zakaryan2004/userbot_docker:latest
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 docker push zakaryan2004/userbot_docker
 
